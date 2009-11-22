@@ -1,0 +1,42 @@
+<style>
+  div#dashboard h3 {
+    margin-bottom: 0px;
+  }
+  
+  div#dashboard div.success {
+    background: green;
+  }
+</style>
+
+<div id="dashboard">
+
+<h2>Run Code Run</h2>
+
+<% @rcr.projects.each do |project| %>
+  <div class="project <%= project["status"]%> ">
+    <h3><%= project["name"] %> - <%= project["status"] %></h3>
+    Last Run At: <%= project["ended_at"] %>
+  </div>
+<% end %>
+
+
+
+<br/>
+<br/>
+<%= @rcr.display %>
+
+
+
+<hr/>
+
+<h2>Hoptoad</h2>
+
+<% @ht.projects.each do |project| %>
+  <%= project %>
+<% end %>
+
+<br/>
+<br/>
+<%= @ht.display %>
+
+</div>

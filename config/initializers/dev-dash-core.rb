@@ -1,0 +1,1 @@
+require "#{RAILS_ROOT}/lib/dev-dash-core/lib/dev-dash"
