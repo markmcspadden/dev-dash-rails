@@ -6,6 +6,9 @@
   div#dashboard div.success {
     background: green;
   }
+  div#dashboard div.failure {
+    background: red;
+  }
 </style>
 
 <div id="dashboard">
@@ -32,11 +35,15 @@
 <h2>Hoptoad</h2>
 
 <% @ht.projects.each do |project| %>
-  <%= project %>
+  <div class="project">
+    <h3><%= project.last["name"] %></h3>
+  </div>
 <% end %>
 
 <br/>
 <br/>
 <%= @ht.display %>
+<br/>
+<%= @ht.raw_projects %>
 
 </div>
